@@ -50,10 +50,10 @@ class Server:
         Returns:
             List[List]: A list of dataset rows corresponding to the page
         """
-        assert isinstance(page, int) and page > 0,
-        "page must be a positive integer"
-        assert isinstance(page_size, int) and page_size > 0,
-        "page_size must be a positive integer"
+        assert isinstance(page, int) and page > 0, \
+            "page must be a positive integer"
+        assert isinstance(page_size, int) and page_size > 0, \
+            "page_size must be a positive integer"
 
         start, end = index_range(page, page_size)
         data = self.dataset()
