@@ -57,7 +57,7 @@ const app = http.createServer((req, res) => {
       })
       .catch((err) => {
         res.statusCode = 500;
-        res.end('This is the list of our students\n' + err.message);
+        res.end(`This is the list of our students\n${err.message}`);
       });
   } else {
     res.statusCode = 404;
@@ -66,6 +66,8 @@ const app = http.createServer((req, res) => {
 });
 
 // Start server on port 1245
-app.listen(1245);
+app.listen(1245, () => {
+  console.log('Server running at http://localhost:1245/');
+});
 
 module.exports = app;
